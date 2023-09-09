@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order-continue</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link rel="icon" href="/img/logo.jpg" />
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    height: 300px !important;
+    padding: 0;
+  }
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  .icon {
+      width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    fill: #333;
+  }
+  .code{
+    max-inline-size: 10 !important;
+  }
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .order-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .total-order {
+        font-weight: bold;
+    }
+    .item-count {
+        font-size: 12px;
+    }
+    .choices {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .choice-label {
+        font-weight: bold;
+    }
+    .address {
+    display: flex;
+    align-items: center;
+  }
+  .address-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      fill: #333;
+    }
+    #btn{
+        height: 40px !important;
+        width: 250px !important;
+        /* margin-left: 30px !important; */
+    }
+    .form-group{
+        padding-bottom: 15px !important;
+    }
+    </style>
+
+</head>
+<body>
+   <!-- <div class="container-fluid d-flex border-primary">
+<p id="order_logo"><img src="img/e-shoplogo.png" height="50px  " width="70px " alt=""></p>
+<div id="reciew">
+<img src="https://static-00.iconduck.com/assets.00/number-1-circle-icon-2048x2048-gcq2ulld.png" height="30px" width="30px" alt="">_____________________________<img src="https://static-00.iconduck.com/assets.00/number-2-circle-icon-2048x2046-mojd22xt.png" height="30px" width="30px" alt=""></div>
+    -->
+
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="container bg-info">
+            <h7>Estimated Delivery by <span id="delivery-date"></span></h7>
+            <!-- <p>Current Date: <span id="current-date"></span></p> -->
+            <div class="container bg-dark-subtle">
+
+                <p>Net: ₹500</p>
+                <p style="color:green;">Discount: 2% off</p>
+                <p>Size: Free Size &nbsp; &nbsp;Qty: 1 </p>
+                
+                <p class="d-flex">Sold by: Roop Designer&nbsp;<p>
+                    Free Delivery
+                </div>
+            </div>
+                </p> </p>
+                
+                <h5>Price Details</h5>
+                <p>Total Price: 500  <span id="rupesign">₹</span></p>
+                <p>Total Discount: 20  <span id="discount-sign">₹</span></p>
+                <p>Total Order: 480 <span id="order-sign">₹</span></p>
+            </div>
+            
+            <div class="col-md-6">
+                <!-- <h4><span class="delivery-icon"><img src="location-icon.svg" alt="Location Icon"></span> Delivery Address</h4> -->
+                <form>
+                    <div class="form-group" >
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input type="number" class="form-control" class="code" required>
+              </div>
+              <div class="form-group">
+                <label for="mobailNumber">Mobile Number</label>
+                <input type="number" class="form-control" class="code" required>
+              </div>
+              <div class="form-group">
+                <label for="city">states:</label>
+                <select class="form-control" id="city">
+                  <option value="">Madhya Pradesh</option>
+                  <option value="indore">Uttar Pradesh</option>
+                  <option value="bhopal">Chhattisgarh </option>
+                  <option value="barwani">Maharashtra </option>
+                  <option value="barwani">Gujarat </option>
+                  <option value="barwani">Rajasthan </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="address">Address</label>
+                <textarea class="form-control" id="address" rows="3" required></textarea>
+            </div>
+                <button type="submit" onclick="data()" class="btn btn-primary" id="btn">Continue</button>
+            </form>
+        </div>
+        </div>
+      </div>
+
+      <script>
+        function data(){
+          window.open("payment.html")
+        }
+        // JavaScript to calculate delivery date, set current date, etc.
+        document.getElementById("delivery-date").textContent = "August 30, 2023"; // Example date
+        document.getElementById("current-date").textContent = new Date().toLocaleDateString();
+        document.getElementById("rupesign").textContent = "₹";
+        document.getElementById("discount-sign").textContent = "₹";
+        document.getElementById("order-sign").textContent = "₹";
+      </script>
+</body>
+</html>

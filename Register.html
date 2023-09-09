@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="icon" href="/img/logo.jpg" />
+</head>
+<style>
+  #rg{
+    width: 200px !;
+  }
+  #btn{
+    width: 360px !important;
+    background-color: brown !important;
+  }
+</style>
+<body>
+  <div  id="rg"  class="card border-dark col-4 container-sm">
+    <h2 class="text-center text-danger">Register</h2>
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" class="form-control" id="mobile" name="mobile" required>
+      </div>
+      <button onclick="data()" type="submit" id="btn" class="btn btn-primary">Register</button>
+    </form>
+    <a href="loginpage.html" class="text-center">You have alrady register pleace click here</a>
+  </div>
+
+  <script > function data(){
+  window.open("/loginpage.html")
+  }</script>
+</body>
+</html>

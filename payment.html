@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment methode</title>
+</head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="/img/logo.jpg" />
+
+<style>
+    
+    #order{
+        background-color:green;
+        height: 40px !important;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <title>Order Page</title>
+  </head>
+  <body>
+    <div class="container  bg-light ">
+      <div class="card p-4 ">
+        <h4 class="mb-4 text-center">Select Payment Method</h4>
+        <div class="form-group">
+          <label for="paymentMethod">Payment Method:</label>
+          <select class="form-control" id="paymentMethod" name="paymentMethod">
+            <option value="cash">Cash</option>
+            <option value="online">Online</option>
+          </select>
+        </div>
+        
+        <div class="form-group" id="onlineOptions" style="display: none;">
+          <label for="onlinePayment">Select Online Payment:</label>
+          <select class="form-control" id="onlinePayment" name="onlinePayment">
+            <option value="pytm">PayTM</option>
+            <option value="googlepay">Google Pay</option>
+            <option value="phonepay">PhonePe</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="reselling">Reselling the Order?</label>
+          <select class="form-control" id="reselling" name="reselling">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        
+        <div class="price-details">
+          <p>Total Product Price: ₹500</p>
+          <p>Total Discount: -₹20</p>
+          <p>Order Total: ₹480</p>
+        </div>
+        
+        <div class="container-sm w-75 ">
+          <p class=" text-success text-center">Yay! Your total discount is ₹20.</p>
+        </div>
+        <button onclick="data()" id="order">please order</button>
+      </div>
+    </div>
+  
+    <script>
+        function data(){
+            alert("order successfully")
+            window.open("http://127.0.0.1:5501/index.html?#");
+        }
+      document.getElementById("paymentMethod").addEventListener("change", function() {
+        var onlineOptions = document.getElementById("onlineOptions");
+        if (this.value === "online") {
+          onlineOptions.style.display = "block";
+        } else {
+          onlineOptions.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
